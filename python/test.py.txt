@@ -1,0 +1,44 @@
+tasks = []  # Initialize the tasks list
+
+def my_list():
+    if not tasks:
+        print("No tasks found.")
+    else:
+        print("Task List:")
+        for index, task in enumerate(tasks):
+            print(f"{index+1}. {task['title']} - Due: {task['Due_Date']}")
+
+def create_task():
+    title = input("Enter the title: ")
+    Description = input("Task description: ")
+    Due_Date = input("Due date: ")
+    
+    tasks.append({
+        "title": title,
+        "Description": Description,
+        "Due_Date": Due_Date
+    })
+                  
+                  
+print ("\nTask Manager")
+print ("1.Create Task")
+print("2.List")
+print("3.Exit")
+
+
+
+while True:
+    choose = input("Enter the choice: ")
+
+    if choose == "1":
+        create_task()
+    elif choose == "2":
+        my_list()
+    elif choose == "3":
+        break
+    else:
+    
+        print("Invalid choice. Please try again.")
+
+print("Exiting Task Manager.")
+
